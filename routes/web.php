@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SingleImageUpload;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/student',[SingleImageUpload::class,'index'])->name('student.index');
+Route::get('/addStudent',[SingleImageUpload::class,'addStudent'])->name('addStudent');
+Route::post('/addStudent',[SingleImageUpload::class,'storeStudent']);
+Route::get('/edit-student/{id}',[SingleImageUpload::class,'edit'])->name('student.edit');
+Route::put('/update-student/{id}',[SingleImageUpload::class,'update'])->name('student.update');
+Route::delete('/delete-student/{id}',[SingleImageUpload::class,'destroy'])->name('student.destroy');
