@@ -22,6 +22,11 @@ class singleImageUpload extends Controller
 
     public function storeStudent(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => ['required'],
+            'profile_image' => ['required']
+        ]);
+
         $student = new SingleImage;
         $student->name = $request->input('name');
 
