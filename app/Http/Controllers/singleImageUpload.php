@@ -84,7 +84,6 @@ class singleImageUpload extends Controller
         {
             File::delete($destinaion);
         }
-
         $student->delete();
         return redirect()->back()->with('status','Student Deleted Successfullly!');
     }

@@ -15,6 +15,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-10 ">
                 <div class="card mt-4 ">
+                    <a href="{{url('/')}}" class="btn btn-info float-end">Home</a>
                     <div class="card-header">
                         All Students | Single Image CRUD 
                         <a href="{{route('addStudent')}}" class="btn btn-secondary float-end">Add Student</a>
